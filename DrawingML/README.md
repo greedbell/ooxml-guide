@@ -48,7 +48,7 @@ SpreadsheetML 中 `sheet*.xml > drawing*.xml > chart*.xml` 实现插入图表功
   * `c:pivotSource` 数据透视表
     * `c:name` 数据透视表名字
     * `c:fmtId` pivotTable*.xml 中 chartFormat 的 ID
-      * [a] `val` fmtId 的值
+      * [a] `val` fmtId 的值
   * `c:chart` 图表信息
     * `c:title` 图表标题
       * c:tx
@@ -132,7 +132,7 @@ SpreadsheetML 中 `sheet*.xml > drawing*.xml > chart*.xml` 实现插入图表功
     * xdr:graphicFrame
       * xdr:nvGraphicFramePr
       * xdr:cNvPr
-        * [a] id: 图表 ID
+        * [a] id: 图表 ID
         * [a] name: 图表名
         * a:extLs
       * xdr:xfrm
