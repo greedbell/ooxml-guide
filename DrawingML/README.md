@@ -45,22 +45,22 @@ SpreadsheetML 中 `sheet*.xml > drawing*.xml > chart*.xml` 实现插入图表功
 
 ### chart*.xml
 
-参考 `21.2 DrawingML - Charts`
+参考 `Ecma-376 Part 1 - 21.2 DrawingML - Charts`
 
-> c:chartSpace
->> c:date1904
+> `c:chartSpace`
+>> `c:date1904`
 >>
->> c:roundedCorners
+>> `c:roundedCorners`
 >>
->> mc:AlternateContent
->>> mc:Choice
+>> `mc:AlternateContent`
+>>> `mc:Choice`
 >>>
->>> mc:Fallback
+>>> `mc:Fallback`
 >>>
->> `c:pivotSource` 数据透视表
->>> `c:name` 数据透视表名字
+>> `c:pivotSource` 数据透视表源信息
+>>> `c:name` 数据透视表名字，eg：[pivot-table.xlsx]Sheet0!PivotTable2
 >>>
->>> `c:fmtId` pivotTable*.xml 中 chartFormat 的 ID
+>>> `c:fmtId` pivotTable*.xml 中 chartFormat 元素 chart 值
 >>>> [a] `val` fmtId 的值
 >>>
 >> `c:chart` 图表信息
@@ -96,7 +96,7 @@ SpreadsheetML 中 `sheet*.xml > drawing*.xml > chart*.xml` 实现插入图表功
 >>>>>>>
 >>>>>> c:dLblPos
 >>>>>>
->>> `c:plotArea` 图标在数据透视表中的区域
+>>> `c:plotArea` 绘制区域
 >>>> c:layout
 >>>>
 >>>> `c:barChart` 条形图
@@ -112,7 +112,7 @@ SpreadsheetML 中 `sheet*.xml > drawing*.xml > chart*.xml` 实现插入图表功
 >>>>>>
 >>>>>> c:order
 >>>>>>
->>>>>> `c:tx` 系列图例轴
+>>>>>> **c:tx** 系列图例轴
 >>>>>>> `c:strRef` String Reference
 >>>>>>>> `c:f` String Reference 的值，eg: `Sheet0!$T$6:$T$8`
 >>>>>>>>
@@ -130,13 +130,13 @@ SpreadsheetML 中 `sheet*.xml > drawing*.xml > chart*.xml` 实现插入图表功
 >>>>>>
 >>>>>> c:invertIfNegative
 >>>>>>
->>>>>> `c:cat` Category Axis Data，系列类别轴
+>>>>>> **c:cat** Category Axis Data，系列类别轴
 >>>>>>> `c:strRef` String Reference
 >>>>>>>> `c:f` String Reference 的值，eg：`Sheet0!$S$9:$S$13`
 >>>>>>>>
 >>>>>>>> c:strCache
 >>>>>>>>
->>>>>> `c:val` 系列值
+>>>>>> **c:val** 系列值
 >>>>>>> `c:numRef` Number Reference
 >>>>>>>> `c:f` Number Reference 的值，eg：`Sheet0!$AA$9:$AA$13`
 >>>>>>>>
@@ -152,7 +152,7 @@ SpreadsheetML 中 `sheet*.xml > drawing*.xml > chart*.xml` 实现插入图表功
 >>>>
 >>> c:legend
 >>>
->>> c:plotVisOnly
+>>> `c:plotVisOnly`: (Plot Visible Only) 是否只绘制可见的
 >>>
 >>> c:dispBlanksAs
 >>>
@@ -218,7 +218,7 @@ SpreadsheetML 中 `sheet*.xml > drawing*.xml > chart*.xml` 实现插入图表功
 >>>>>
 >>>> a:graphic
 >>>>> a:graphicData
->>>>>> c:chart : 图表引用
+>>>>>> `c:chart` : 图表引用
 >>>>>
 >>>>
 >>> xdr:clientData
