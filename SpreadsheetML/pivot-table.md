@@ -20,12 +20,89 @@
 ### pivotTable*.xml
 
 > `pivotTableDefinition`
->> `pivotFields`: 数据透视表字段
->>> `pivotField`
+>> `pivotFields`: 数据透视表字段集合
+>>> `pivotField`: 数据透视表字段
+>>>> [a] `name`:
+>>>>
+>>>> [a] `axis`:
+>>>>
+>>>> [a] `compact`: ?
+>>>>
+>>>> [a] `outline`: ?
+>>>>
+>>>> [a] `multipleItemSelectionAllowed`: ?
+>>>>
+>>>> [a] `showAll`:
+>>>>
+>>>> [a] `sortType`: 排序 [descending|asending]
+>>>>
+>>>> [a] `subtotalTop`
+>>>>
+>>>> [a] `defaultSubtotal`
+>>>>
+>>>> [a] `dataField`: 是否为值域，默认 false
+>>>>
+>>>> [a] `measureFilter`: 是否包含计数项，默认 false
+>>>>
+>>>> `items`:
+>>>>> `item`:
+>>>>>> [a] `t`: 数据类型，[avg,sum,max,......,default]
+>>>>>>
+>>>>>> [a] `x`: 对应 cacheFields 中 shareItems 索引
+>>>>>>
+>>>>>> [a] `h`: 是否隐藏
+>>>>>>
+>>>>>> [a] `sd`: Hide Details，是否隐藏详情，默认 true 展开
+>>>>>>
+>>>>>> [a] `f`: 是否为计数项，默认 false 不是
+>>>>
+>>>> `autoSortScope`: 排序依据，如果没有该元素，表示按自己排序，有的话按对应值域排序
+>>>>> `pivotArea`
+>>>>>> `references`
+>>>>>>> `reference`
+>>>>>>>> [a] `field`: pivotFields 索引。`4294967294` 表示总计，其它情况只能是列
+>>>>>>>>
+>>>>>>>> `x`: 某个域的 Item 索引。`field` 为 `4294967294` 表示值域索引
+>>>>>>>>> [a] `v`: `x` 的值
+
+// 数据1
+<autoSortScope>
+    <pivotArea dataOnly="0" outline="0" fieldPosition="0">
+        <references count="1">
+            <reference field="4294967294" count="1" selected="0">
+                <x v="0"/>
+            </reference>
+        </references>
+    </pivotArea>
+</autoSortScope>
+
+// 字段 1
+<autoSortScope>
+    <pivotArea dataOnly="0" outline="0" fieldPosition="0">
+        <references count="1">
+            <reference field="4294967294" count="1" selected="0">
+                <x v="1"/>
+            </reference>
+        </references>
+    </pivotArea>
+</autoSortScope>
+
+// 数据2
+<autoSortScope>
+    <pivotArea dataOnly="0" outline="0" fieldPosition="0">
+        <references count="1">
+            <reference field="4294967294" count="1" selected="0">
+                <x v="2"/>
+            </reference>
+        </references>
+    </pivotArea>
+</autoSortScope>
 >>
 >> `rowFields`: 行域
+>>> `field`
 >>
 >> `colFields`: 列域
+>>> `field`
 >>
 >> `pageFields`: 筛选器
 >>
@@ -61,3 +138,15 @@
 >>>>>>>
 >>>>>>> `x`: pivot field 中的某个 item
 >>>>>>>> [a] `v`: item 在 cache field 中的 index
+
+## pivotCacheDefinition*.xml
+
+> pivotCacheDefinition
+>> cacheSource
+>>
+>> cacheFields
+>>> cacheField
+>>>> [a] `databaseField`: 是否为数据库字段，默认是，如果不是的则为计数字段
+>>
+>> calculatedItems
+>>> calculatedItem
