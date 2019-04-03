@@ -22,7 +22,7 @@
 > `pivotTableDefinition`
 >> `pivotFields`: 数据透视表字段集合
 >>> `pivotField`: 数据透视表字段
->>>> [a] `name`:
+>>>> [a] `name`: 自定义名称，无该字段时取 cacheField 的 name
 >>>>
 >>>> [a] `axis`:
 >>>>
@@ -56,7 +56,7 @@
 >>>>>>
 >>>>>> [a] `f`: 是否为计数项，默认 false 不是
 >>>>
->>>> `autoSortScope`: 排序依据，如果没有该元素，表示按自己排序，有的话按对应值域排序
+>>>> `autoSortScope`: 排序依据，如果没有该元素，表示按本身排序，有的话按对应值域排序
 >>>>> `pivotArea`
 >>>>>> `references`
 >>>>>>> `reference`
@@ -64,39 +64,6 @@
 >>>>>>>>
 >>>>>>>> `x`: 某个域的 Item 索引。`field` 为 `4294967294` 表示值域索引
 >>>>>>>>> [a] `v`: `x` 的值
-
-// 数据1
-<autoSortScope>
-    <pivotArea dataOnly="0" outline="0" fieldPosition="0">
-        <references count="1">
-            <reference field="4294967294" count="1" selected="0">
-                <x v="0"/>
-            </reference>
-        </references>
-    </pivotArea>
-</autoSortScope>
-
-// 字段 1
-<autoSortScope>
-    <pivotArea dataOnly="0" outline="0" fieldPosition="0">
-        <references count="1">
-            <reference field="4294967294" count="1" selected="0">
-                <x v="1"/>
-            </reference>
-        </references>
-    </pivotArea>
-</autoSortScope>
-
-// 数据2
-<autoSortScope>
-    <pivotArea dataOnly="0" outline="0" fieldPosition="0">
-        <references count="1">
-            <reference field="4294967294" count="1" selected="0">
-                <x v="2"/>
-            </reference>
-        </references>
-    </pivotArea>
-</autoSortScope>
 >>
 >> `rowFields`: 行域
 >>> `field`
@@ -147,6 +114,38 @@
 >> cacheFields
 >>> cacheField
 >>>> [a] `databaseField`: 是否为数据库字段，默认是，如果不是的则为计数字段
+>>>>
+>>>> `sharedItems`
+>>>>
+>>>> [a]`containsString`: 是否包含字符串。默认是
+>>>>
+>>>> [a]`containsDate`: 是否包含日期。默认否
+>>>>
+>>>> [a]`containsBlank`: 是否包含空。默认否
+>>>>
+>>>> [a]`containsNumber`: 是否包含数字。默认否
+>>>>
+>>>> [a]`containsInteger`: 是否包含数字并且所有数字都不是浮点型。默认否
+>>>>
+>>>> [a]`containsMixedTypes`: 是否包含超过一种数据类型。默认否
+>>>>
+>>>> [a]`containsSemiMixedTypes`: 包含字符串，并且可以包含其它数据类型。默认是
+>>>>
+>>>> n: 数字
+>>>>
+>>>>> v: 值
+>>>>
+>>>> s: 字符串
+>>>>
+>>>>> v: 值
+>>>>
+>>>> m: 空
+>>>>
+>>>>> v: 值
+>>>>
+>>>> d: 日期
+>>>>
+>>>>> v: 值
 >>
->> calculatedItems
+>> `calculatedItems` 计数项
 >>> calculatedItem
