@@ -1,6 +1,14 @@
 # Worksheets
 
-参考 `Ecma-376 Part 1 - 18.3.1 Worksheets`
+参考 `Ecma-376 Part 1 - 18.3 Worksheets`
+
+## 文件结构
+
+> xl
+>> worksheets
+>>> `sheet*.xml`
+>>
+>
 
 ## sheet*.xml
 
@@ -16,8 +24,20 @@
 >> cols
 >>
 >> sheetData
->>> row
->>>> c
+>>> `row`
+>>>> [a]`r`: 行号
+>>>>
+>>>> `c`: 单元格
+>>>>> [a]`r`: 单元格索引，Eg A1
+>>>>>
+>>>>> [a]`s`: 单元格样式
+>>>>>
+>>>>> [a]`t`: 单元格类型，参考 `18.18.11 ST_CellType (Cell Type)`，b (Boolean),d (Date),e (Error),inlineStr (Inline String),n (Number),s (Shared String):普通字符串,str (String):公式字符串
+>>>>>
+>>>>> `f`: 公式
+>>>>>> [a]`ca`: 该公式在下次计算时是否需要重新计算，默认否
+>>>>>
+>>>>> `v`: 值
 >>
 >> mergeCells
 >>> mergeCell
@@ -33,44 +53,3 @@
 >>
 >> drawing
 >
-## styles*.xml
-
-> styleSheet
->> fonts
->>
->> `fills`
->>> `fill`
->>>> `patternFill`
->>>>> [a]`patternType`
->>>>>
->>>>> `fgColor`
->>>>>
->>>>> `bgColor`
->>>>>
->>
->> borders
->>
->> cellStyleXfs
->>
->> `cellXfs`: 第个 cell 样式
->>> `xf`
->>>> [a]`fontId`: 字体样式索引
->>>>
->>>> [a]`fillId`: 填充样式索引
->>>>
->>>> [a]`borderId`: 边框样式索引
->>>>
->>>> [a]`xfId`
->>>>
->>>> [a]`applyFont`: `fontId`是否生效
->>>>
->>>> [a]`applyFill`: `fillId`是否生效
->>>
->>
->> cellStyles
->>
->> dxfs
->>
->> tableStyles
->>
->> extLst
