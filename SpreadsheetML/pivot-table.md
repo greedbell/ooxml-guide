@@ -20,6 +20,11 @@
 ### pivotTable*.xml
 
 > `pivotTableDefinition`
+>> `location`: 数据透视表显示位置
+>>> [a]`colPageCount`: Columns Per Page。筛选器占的列数，一般就是 1
+>>>
+>>> [a]`rowPageCount`: Rows Per Page Count。筛选器占的行数，一般就是筛选器数量
+>>
 >> `pivotFields`: 数据透视表字段集合
 >>> `pivotField`: 数据透视表字段
 >>>> [a] `name`: 自定义名称，无该字段时取 cacheField 的 name
@@ -105,6 +110,16 @@
 >>>>>>>
 >>>>>>> `x`: pivot field 中的某个 item
 >>>>>>>> [a] `v`: item 在 cache field 中的 index
+
+### pivotTableDefinition 的一些属性
+
+> `pivotTableDefinition`
+>> [a] `grandTotalCaption`: 总计标题
+>>
+>> [a] `rowHeaderCaption`: 行标题
+>>
+>> [a] `dataCaption`: 值域标题
+>
 
 ## pivotCacheDefinition*.xml
 
