@@ -65,9 +65,9 @@
 >>>>> `pivotArea`
 >>>>>> `references`
 >>>>>>> `reference`
->>>>>>>> [a] `field`: pivotFields 索引。`4294967294` 表示总计，其它情况只能是列
+>>>>>>>> [a] `field`: pivotFields 索引。`4294967294` 表示总计，其它情况只能是列 ？？通过 google sheets 导出的 Excel 分析，只有 `field=4294967294` 部分有效。
 >>>>>>>>
->>>>>>>> `x`: 某个域的 Item 索引。`field` 为 `4294967294` 表示值域索引
+>>>>>>>> `x`: 某个域的 Item 索引。`field` 为 `4294967294` 表示排序依据值域索引
 >>>>>>>>> [a] `v`: `x` 的值
 >>
 >> `rowFields`: 行域
@@ -78,7 +78,14 @@
 >>
 >> `pageFields`: 筛选器
 >>
->> `dataFields`: 值域
+>> `dataFields`: 所有值域
+>>> `dataField`: 值域
+>>> 
+>>> [a]`name`: 值域名称
+>>>
+>>> [a]`fld`: 值域在 pivotFields 索引
+>>>
+>>> [a]`numFmtId`: 值域显示格式。eg: 176 > ￥
 >>
 >> `pivotTableStyleInfo`: 样式
 >>
