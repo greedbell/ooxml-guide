@@ -29,7 +29,7 @@
 >>
 >> cols
 >>
->> sheetData
+>> `sheetData`
 >>> `row`
 >>>> [a]`r`: 行号
 >>>>
@@ -52,6 +52,18 @@
 >>
 >> phoneticPr
 >>
+>> `hyperlinks`: 超链接
+>>> `hyperlink`: 超链接
+>>>> [a]`ref`: 使用该超链接的区域。eg1: `A1:B2`，eg2: `A1`
+>>>>
+>>>> [a]`tooltip`: 鼠标放上去的时候显示的内容。
+>>>>
+>>>> [a]`location`: 内部链接跳转的位置。单元格位置或者自定义名称，自定义名称只能是对应单元格，不能是 sheet，否则不能跳转。单元格位置格式：`[sheet name]!<area references>`。 eg1: `Sheet1!A1`. eg2: `Sheet1!A1:B9`. eg3: `custom_name`
+>>>>
+>>>> [a]`display`: 显示内容。
+>>>>
+>>>> [a]`r:id`: 外部链接 `_rels/sheet*.xml.rels` 中 `Relationship` 的 ID. eg: `rId1`
+>>
 >> pageMargins
 >>
 >> pageSetup
@@ -64,11 +76,11 @@
 >> `extLst`
 >
 
-## extLst
+### extLst
 
 参考 <https://docs.microsoft.com/en-us/openspecs/office_standards/ms-xlsx/07d607af-5618-4ca2-b683-6a78dc0d9627>
 
-## formula
+### formula
 
 * COUNT: 数值计算 函数计算包含数字的单元格个数以及参数列表中数字的个数。
 * COUNTA: 计算  函数计算范围中不为空的单元格的个数。
